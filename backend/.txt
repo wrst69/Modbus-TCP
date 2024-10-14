@@ -1,0 +1,6 @@
+{ address: 1658, value: '26.56' }   temp in
+{ address: 2704, value: '26.44' }
+
+
+{ address: 1648, value: '21.15' }
+{ address: 2706, value: '21.28' }
