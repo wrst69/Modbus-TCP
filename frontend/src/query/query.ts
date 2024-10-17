@@ -41,7 +41,7 @@ export const useDataQueryTest = () => {
       const flushPumpStatus = () => {
         let status = getRandomNumber(0, 6);
 
-        if (status === FlushPumpStatus.NotExist) {
+        if (status === FlushPumpStatus.NotExist || status === FlushPumpStatus.NotExistToo) {
           status = status + 1;
         }
 

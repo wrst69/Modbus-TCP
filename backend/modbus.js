@@ -10,7 +10,7 @@ export class ModbusService{
       'port': process.env.PLC_PORT
     };
     this.addresses = [809, 835, 861, 887, 1016, 1208, 1505, 1527, 1549, 1571, 2712, 2810, 2842, 2910, 2942, 3010, 3042];
-    this.twoBytesRealAddresses = [962, 1448, 1450, 1648, 1658, 2304, 2604];
+    this.twoBytesRealAddresses = [962, 1448, 1450, 1648, 1658, 1668, 2304, 2604];
     this.twoBytesUdintAddresses = [2002, 2008, 2014, 2020, 2026, 2032]
     this.results;
   }

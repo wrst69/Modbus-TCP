@@ -26,8 +26,8 @@ export function Header() {
             <div className="grid gap-0.5 justify-start">
               <CardTitle className="font-bold">Станция приема ЖБО</CardTitle>
               <div className="flex flex-col mt-2">
-                {outdoorTemp && <div className="font-semibold text-base">{`Температура наружного воздуха:\u00A0\ ${outdoorTemp.value} `}&deg;C</div>}
-                {stationTemp && <div className="font-semibold text-base">{`Температура внутри станции:\u00A0\  ${stationTemp.value} `}&deg;C</div>}
+                {outdoorTemp && <div className="font-semibold text-base">{`Температура наружного воздуха:\u00A0\ ${Math.floor(outdoorTemp.value)} `}&deg;C</div>}
+                {stationTemp && <div className="font-semibold text-base">{`Температура внутри станции:\u00A0\  ${Math.floor(stationTemp.value)} `}&deg;C</div>}
                 {pH && <div className="font-semibold text-base">{`pH:\u00A0\  ${pH.value}`}</div>}
                 {conduction && <div className="font-semibold text-base">{`Проводимость:\u00A0\  ${conduction.value} мкСм/см`}</div>}
               </div>     

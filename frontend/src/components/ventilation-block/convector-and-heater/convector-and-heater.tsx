@@ -1,4 +1,5 @@
 import { ConvectorStatus, HeaterStatus } from "@/components/ventilation-block/convector-and-heater/convector-and-heater-const";
+import { useDataQuery } from "@/query/query";
 import { AddressData } from "@/shared/types/types";
 import {
   Card,
@@ -82,11 +83,21 @@ export function ConvectorAndHeaterComponent({
 }: {
   item: AddressData,
 }) {
+  const { data, isPending, isError } = useDataQuery();
+
+  if (isPending) return null;
+
+  if (isError) return null;
+
+  const heaterTempAddress = 1668;
+  const heaterTemp = data.find(( item) => item.address === heaterTempAddress);
+  
   return  <Card key={item.address} className={checkError(item) ? 'animate-pulse bg-red-600' : undefined}>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">
                 {filterVariant(item.address)}
               </CardTitle>
+              {heaterTemp && item.address === ConvectorAndHeaterVariants.Heater1 && <div className="font-bold text-base">{Math.floor(heaterTemp.value)} &deg;C</div>}
             </CardHeader>
             <CardContent>
               <div className="text-xl font-bold">{filterStatus(item.address, item.value)}</div>
